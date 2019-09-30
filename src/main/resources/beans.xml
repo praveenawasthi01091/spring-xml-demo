@@ -42,8 +42,12 @@
     <bean  id="blcd1" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit"
                                                                          destroy-method="customDestroy">
 
+    </bean>
+
+    <bean  id="bppdb1" class="com.stackroute.demo.BeanPostProcessorDemoBean" >
 
     </bean>
+
 
 
 

@@ -2,6 +2,7 @@ package com.stackroute;
 
 
 import com.stackroute.demo.BeanLifecycleDemoBean;
+import com.stackroute.demo.BeanPostProcessorDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.BeansException;
@@ -28,6 +29,9 @@ public class Main
 
         BeanLifecycleDemoBean   beanLifecycleDemoBean=(BeanLifecycleDemoBean)applicationContext.getBean("blcd1");
         System.out.println(beanLifecycleDemoBean);
+
+        BeanPostProcessorDemoBean beanPostProcessorDemoBean=(BeanPostProcessorDemoBean)applicationContext.getBean("bppdb1") ;
+        System.out.println(beanPostProcessorDemoBean);
 
         ClassPathXmlApplicationContext cxt=(ClassPathXmlApplicationContext)applicationContext;
         cxt.close();
