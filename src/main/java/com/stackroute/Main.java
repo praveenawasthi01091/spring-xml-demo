@@ -1,6 +1,7 @@
 package com.stackroute;
 
 
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.BeansException;
@@ -24,16 +25,12 @@ public class Main
     public static void main( String[] args ) throws FileNotFoundException
     {
        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        /*without property*/
-        Movie movie = (Movie) applicationContext.getBean("movie1");
-        System.out.println(movie);
-        /* with  property byName*/
-        Movie movie1=(Movie)applicationContext.getBean("movie2");
-        System.out.println(movie1);
 
-        /* with constructor */
-        Movie movie2=(Movie)applicationContext.getBean("movie3");
-        System.out.println(movie2);
+        BeanLifecycleDemoBean   beanLifecycleDemoBean=(BeanLifecycleDemoBean)applicationContext.getBean("blcd1");
+        System.out.println(beanLifecycleDemoBean);
+
+        ClassPathXmlApplicationContext cxt=(ClassPathXmlApplicationContext)applicationContext;
+        cxt.close();
 
     }
 

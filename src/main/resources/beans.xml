@@ -39,6 +39,12 @@
 
     </bean>
 
+    <bean  id="blcd1" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit"
+                                                                         destroy-method="customDestroy">
+
+
+    </bean>
+
 
 
 
