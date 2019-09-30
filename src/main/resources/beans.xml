@@ -7,7 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="actr1" class="com.stackroute.domain.Actor">
+    <bean id="actor" class="com.stackroute.domain.Actor">
         <property name="name" value="Salman Khan"/>
         <property name="gender" value="male"/>
         <property name="age" value="45"/>
@@ -25,17 +25,21 @@
         <property name="age" value="52"/>
     </bean>
 
-    <bean  id="movie1" class="com.stackroute.domain.Movie">
-        <constructor-arg ref="actr1"/>
+    <bean  id="movie1" class="com.stackroute.domain.Movie" autowire="byName">
+
     </bean>
 
-    <bean scope="prototype" id="movie2" class="com.stackroute.domain.Movie">
-        <constructor-arg ref="actr2"/>
-    </bean>
-
-    <bean name="movie3, movie4" class="com.stackroute.domain.Movie">
+    <bean  id="movie3" class="com.stackroute.domain.Movie">
         <constructor-arg ref="actr3"/>
+
     </bean>
+
+    <bean  id="movie2" class="com.stackroute.domain.Movie" autowire="byName">
+        <property name="actor" ref="actr2"/>
+
+    </bean>
+
+
 
 
 

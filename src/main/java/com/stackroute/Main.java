@@ -20,53 +20,26 @@ public class Main
 {
     public static void main( String[] args ) throws FileNotFoundException
     {
-       /* System.out.println( "Hello World!" );
-        Actor  actor= new Actor("Salman","Male",29);
-        System.out.println(actor); */
-
-        /* 1st method */
-       /* Resource resource= new ClassPathResource("beans.xml");
-        BeanFactory factory= new XmlBeanFactory(resource);
-        Actor actr1=(Actor) factory.getBean("actr1");
-        System.out.println(actr1); */
-/*        BeanFactory factory= new XmlBeanFactory(resource);
-        Movie movie3=(Movie) factory.getBean("movie1");
-        System.out.println(movie3);
-
-        System.out.println("2nd method"); */
-
-
-        /* 2nd method*/
-        /*
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Actor actr2 = (Actor) applicationContext.getBean("actr2");
-        System.out.println(actr2); */
-
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+        /*without property*/
         Movie movie = (Movie) applicationContext.getBean("movie1");
         System.out.println(movie);
+        /* with  property byName*/
+        Movie movie1=(Movie)applicationContext.getBean("movie2");
+        System.out.println(movie1);
 
-        //applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie2 = (Movie) applicationContext.getBean("movie1");
+        /* with constructor */
+        Movie movie2=(Movie)applicationContext.getBean("movie3");
         System.out.println(movie2);
-        System.out.println("Without scope property");
-        System.out.println((Movie) applicationContext.getBean("movie1")==(Movie) applicationContext.getBean("movie1"));
-        /* with scope prototype*/
-        System.out.println("With scope property");
-        System.out.println((Movie) applicationContext.getBean("movie2")==(Movie) applicationContext.getBean("movie2"));
-        /* use name */
-        Movie movie5=(Movie) applicationContext.getBean("movie3");
-        Movie movie6=(Movie) applicationContext.getBean("movie4");
-        System.out.println(movie5);
-        System.out.println(movie6);
 
+        /* Exception while using byType*/
 
-       /* BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
-        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        reader.loadBeanDefinitions(new ClassPathResource("beans.xml"));
-        Movie movie4= (Movie) ((DefaultListableBeanFactory) (beanDefinitionRegistry)).getBean("movie2");
-        System.out.println(movie4); */
-
+       /*Exception in thread "main" org.springframework.beans.factory.UnsatisfiedDependencyException:
+        Error creating bean with name 'movie3' defined in class path resource
+        [beans.xml]: Unsatisfied dependency expressed through bean property 'actor';
+        nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException:
+        No qualifying bean of type 'com.stackroute.domain.Actor' available:
+        expected single matching bean but found 3: actor*/
 
     }
 
