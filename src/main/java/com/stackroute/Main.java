@@ -54,7 +54,11 @@ public class Main
         /* with scope prototype*/
         System.out.println("With scope property");
         System.out.println((Movie) applicationContext.getBean("movie2")==(Movie) applicationContext.getBean("movie2"));
-
+        /* use name */
+        Movie movie13=(Movie) applicationContext.getBean("movie3");
+        Movie movie14=(Movie) applicationContext.getBean("movie4");
+        System.out.println(movie13);
+        System.out.println(movie14);
 
 
        /* BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();

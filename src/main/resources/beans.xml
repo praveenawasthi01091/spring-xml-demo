@@ -33,7 +33,7 @@
         <constructor-arg ref="actr2"/>
     </bean>
 
-    <bean id="movie3" class="com.stackroute.domain.Movie">
+    <bean name="movie3, movie4" class="com.stackroute.domain.Movie">
         <constructor-arg ref="actr3"/>
     </bean>
 
