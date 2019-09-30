@@ -19,15 +19,16 @@ import java.io.FileNotFoundException;
 public class Main
 {
     public static void main( String[] args ) throws FileNotFoundException {
-        System.out.println( "Hello World!" );
+      /*  System.out.println( "Hello World!" );
         Actor  actor= new Actor("Salman","Male",29);
-        System.out.println(actor);
+        System.out.println(actor); */
 
         /* 1st method */
        /* Resource resource= new ClassPathResource("beans.xml");
         BeanFactory factory= new XmlBeanFactory(resource);
         Actor actr1=(Actor) factory.getBean("actr1");
         System.out.println(actr1); */
+       /*  1st method*/
         Resource resource= new ClassPathResource("beans.xml");
         BeanFactory factory= new XmlBeanFactory(resource);
         Movie movie3=(Movie) factory.getBean("movie1");
@@ -54,6 +55,9 @@ public class Main
         BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
         reader.loadBeanDefinitions(new ClassPathResource("beans.xml"));
+        Movie movie4= (Movie) ((DefaultListableBeanFactory)(beanDefinitionRegistry)).getBean("movie2");
+        System.out.println(movie4);
+
 
 
     }

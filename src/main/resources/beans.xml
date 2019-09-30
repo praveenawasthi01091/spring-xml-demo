@@ -24,8 +24,13 @@
     </bean>
 
     <bean id="movie2" class="com.stackroute.domain.Movie">
-        <constructor-arg ref="actr2"/>
+        <property name="actor" ref="actr2"/>
     </bean>
+<!--
+    <bean id="movie2" class="com.stackroute.domain.Movie">
+        <constructor-arg ref="actr2"/>
+    </bean> -->
+
 
 
 
