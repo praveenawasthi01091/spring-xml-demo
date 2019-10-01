@@ -32,6 +32,9 @@ public class Main
         Movie movie2=(Movie)applicationContext.getBean("movie3");
         System.out.println(movie2);
 
+        Movie movie4=(Movie)applicationContext.getBean("movie4");
+        System.out.println(movie4);
+
         /* Exception while using byType*/
 
        /*Exception in thread "main" org.springframework.beans.factory.UnsatisfiedDependencyException:

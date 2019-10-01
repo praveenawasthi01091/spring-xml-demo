@@ -7,11 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="actor" class="com.stackroute.domain.Actor">
-        <property name="name" value="Salman Khan"/>
-        <property name="gender" value="male"/>
-        <property name="age" value="45"/>
-    </bean>
+
 
     <bean id="actr2" class="com.stackroute.domain.Actor">
         <property name="name" value="Akshay Kumar"/>
@@ -19,10 +15,22 @@
         <property name="age" value="50"/>
     </bean>
 
+    <bean id="actor" class="com.stackroute.domain.Actor">
+        <property name="name" value="Salman Khan"/>
+        <property name="gender" value="male"/>
+        <property name="age" value="45"/>
+    </bean>
+
     <bean id="actr3" class="com.stackroute.domain.Actor">
         <property name="name" value="SRK"/>
         <property name="gender" value="male"/>
         <property name="age" value="52"/>
+    </bean>
+
+    <bean id="actr4" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="ask"/>
+        <constructor-arg name="gender" value="male"/>
+        <constructor-arg name="age" value="23"/>
     </bean>
 
     <bean  id="movie1" class="com.stackroute.domain.Movie" autowire="byName">
@@ -36,6 +44,9 @@
 
     <bean  id="movie2" class="com.stackroute.domain.Movie" autowire="byName">
         <property name="actor" ref="actr2"/>
+    </bean>
+
+    <bean  id="movie4" class="com.stackroute.domain.Movie" autowire="constructor">
 
     </bean>
 
